@@ -6,23 +6,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Bellybutton Biodiversity</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .jumbotron {
+      background-color: #343a40;
+      color: white;
+    }
+
+    #selDataset {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+    }
+
+    .well {
+      background-color: #f8f9fa;
+      padding: 15px;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+    }
+
+    .panel-primary {
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+    }
+
+    .panel-heading {
+      background-color: #343a40;
+      color: white;
+    }
+  </style>
 </head>
 
 <body>
 
-  <div class="container">
+  <div class="container mt-5">
     <div class="row">
       <div class="col-md-12 jumbotron text-center">
-        <h1>Belly Button Biodiversity Dashboard</h1>
-        <p>Use the interactive charts below to explore the dataset</p>
+        <h1 class="mb-3">Belly Button Biodiversity Dashboard</h1>
+        <p>Explore the dataset using interactive charts below</p>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-2">
-        <div class="well">
-          <h5>Test Subject ID No.:</h5>
-          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+      <div class="col-md-3">
+        <div class="well mb-3">
+          <h5 class="mb-3">Test Subject ID No.:</h5>
+          <select id="selDataset" onchange="optionChanged(this.value)" class="form-select"></select>
         </div>
         <div class="panel panel-primary">
           <div class="panel-heading">
@@ -31,25 +65,23 @@
           <div id="sample-metadata" class="panel-body"></div>
         </div>
       </div>
-      <div class="col-md-5">
+      <div class="col-md-4">
         <div id="bar"></div>
       </div>
       <div class="col-md-5">
         <div id="gauge"></div>
       </div>
     </div>
-    <div class="row">
+    <div class="row mt-3">
       <div class="col-md-12">
         <div id="bubble"></div>
       </div>
     </div>
   </div>
 
-  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="./static/js/app.js"></script>
-  <script src="./static/js/bonus.js"></script>
-
 </body>
 
 </html>
